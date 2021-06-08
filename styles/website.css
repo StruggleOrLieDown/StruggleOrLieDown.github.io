@@ -1,0 +1,113 @@
+body {
+    font-family: "JetBrains Mono" !important;
+}
+
+.book {
+    background-color: black;
+}
+
+.page-inner {
+    max-width: 70%;
+}
+
+.book-summary {
+    width: 15% !important;
+}
+
+.book .book-summary .book-logo {
+    padding: 10px 0;
+}
+
+.book .book-summary ul.summary li span {
+    color: white;
+}
+
+.nav-list {
+    justify-content: flex-start;
+    background-color: #9daab621;
+    padding: 0 19px;
+}
+
+.nav-list .nav-item a {
+    color: #3333336b;
+}
+
+.book.without-animation .book-summary {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(./冬季.jpg) no-repeat 0 5%/ cover;
+}
+
+.book.without-animation .book-body {
+    left: 230px;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(./山峰.jpg) no-repeat 0 5%/ cover;
+}
+
+p, h1, h2, h3, h4, h5, h6, a, li {
+    color: rgb(253, 252, 252) !important;
+}
+
+nav.intopic-toc .nav > li > a {
+    color: white !important;
+}
+
+/* 左侧边栏样式 */
+
+/* 搜索栏样式 */
+
+/* 滚动槽 谷歌 */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* 滚动条滑块 谷歌 */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+
+
+/* 目录栏样式 */
+.book-summary ul.summary li {
+    border: 3px solid #a1e2da;
+    border-radius: 6px;
+    margin: 12px;
+}
+
+/* 代码块 */
+code {
+    background-color: #46494c !important;
+}
+
+.markdown-section pre > code {
+    background-color: #f3eacb !important;
+}
+
+.markdown-section pre {
+    border-radius: 21px;
+    background-color: #f3eacb !important;
+}
+
+.markdown-section code {
+    border-radius: 7px;
+    /*color: #b56666;*/
+}
+
+.markdown-section strong {
+    color: #0ab6f5;
+}
+
+/* 搜索框 */
+::-webkit-input-placeholder {
+    color: #fdf6e3;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+/* 设置滚动条的样式 */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+
