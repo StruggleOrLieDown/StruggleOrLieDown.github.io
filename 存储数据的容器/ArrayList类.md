@@ -81,9 +81,9 @@ public interface Iterable<T> {
 
 `default void forEach(Consumer<? super T> action) {}`
 
-迭代器中定义的这个方法，竟是 `forEach`，流程控制的一种
+迭代器中定义的这个方法，竟是 `forEach`，流程控制中的一种！
 
-由此可见，`forEach` 是对于 `for i` 的简化，底层是基于迭代器实现的
+由此可见，`forEach` 对于 `for i` 的简化，底层是基于迭代器实现的
 
 `ArrayList` 容器也实现了迭代器接口，但 **不是直接实现的，而是通过层层继承**
 

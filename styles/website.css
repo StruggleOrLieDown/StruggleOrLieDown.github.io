@@ -38,7 +38,7 @@ body {
 
 .book.without-animation .book-body {
     left: 230px;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(./山峰.jpg) no-repeat 0 5%/ cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(./星空灯火.jpg) no-repeat 0 5%/ cover;
 }
 
 p, h1, h2, h3, h4, h5, h6, a, li {
