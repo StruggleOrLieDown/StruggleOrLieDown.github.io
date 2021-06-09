@@ -66,12 +66,15 @@ nav.intopic-toc .nav > li > a {
     -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
 }
 
-
 /* 目录栏样式 */
 .book-summary ul.summary li {
     border: 3px solid #a1e2da;
     border-radius: 6px;
     margin: 12px;
+}
+
+.book .book-summary .chapter.expanded > .articles{
+  padding-left: 0;
 }
 
 /* 代码块 */
