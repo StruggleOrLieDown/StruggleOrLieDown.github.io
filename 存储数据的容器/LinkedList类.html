@@ -1370,34 +1370,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x57FA;&#x672C;&#x4F7F;&#x7528;">&#x57FA;&#x672C;&#x4F7F;&#x7528;</h3>
-<p><code>LinkedList</code> &#x7684;&#x5E95;&#x5C42;&#x57FA;&#x4E8E; <code>&#x53CC;&#x5411;&#x94FE;&#x8868;</code> &#x5B9E;&#x73B0;&#xFF0C;&#x8FD9;&#x4E0E; <code>Arraylist</code>&#x3001;<code>Vector</code> &#x7684; <code>&#x6570;&#x7EC4;</code> &#x5B9E;&#x73B0;&#x662F;&#x4E0D;&#x540C;&#x7684;</p>
-<p>&#x57FA;&#x4E8E; <code>&#x53CC;&#x5411;&#x94FE;&#x8868;</code> &#x5B9E;&#x73B0;&#x7684; <code>LinkedList</code> &#x5177;&#x6709;&#x5982;&#x4E0B;&#x7684;&#x7279;&#x70B9;</p>
-<ul>
-<li>&#x6570;&#x636E;&#x5143;&#x7D20;&#x7684;&#x589E;&#x52A0;&#x3001;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x8F83;&#x5FEB;&#xFF0C;&#x5B83;&#x7684; <strong>&#x4FEE;&#x6539;&#x3001;&#x5220;&#x9664;&#x6548;&#x7387;&#x9AD8;</strong></li>
-<li>&#x76F8;&#x5BF9;&#x4E8E;&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x7684; <code>ArrayList</code> &#xFF0C;&#x5B83;&#x7684; <strong>&#x67E5;&#x8BE2;&#x3001;&#x6DFB;&#x52A0;&#x6548;&#x7387;&#x4F4E;</strong></li>
-<li>&#x76F8;&#x5BF9;&#x4E8E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684; <code>Vector</code> &#xFF0C;&#x5B83;&#x7684; <strong>&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;</strong></li>
-</ul>
-<pre><code class="lang-java">ArrayList&lt;Integer&gt; arrayList = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+                                <h1 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h1>
+<p>LinkedList&#xFF0C;&#x5B83;&#x7684;&#x5E95;&#x5C42;&#x57FA;&#x4E8E;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#xFF0C;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5B58;&#x50A8;&#x4E0D;&#x8FDE;&#x7EED;&#xFF0C;&#x589E;&#x3001;&#x5220;&#x6570;&#x636E;&#x5143;&#x7D20;&#x65F6;&#x6548;&#x7387;&#x6781;&#x9AD8;</p>
+<p>&#x8FD9;&#x4E0E; ArrayList &#x672C;&#x8D28;&#x4E0A;&#x4E0D;&#x540C;&#xFF0C;&#x5BF9;&#x4E8E;&#x5177;&#x4F53;&#x7684;&#x6548;&#x7387;&#x5DEE;&#x5F02;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x4E0B;&#x8FF0;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x6D4B;&#x8BD5;&#x4E8C;&#x8005;&#x5728;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x65F6;&#x7684;&#x8017;&#x8D39;&#x65F6;&#x95F4;</p>
+<pre><code class="lang-java">ArrayList&lt;Integer&gt; ArrayList = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
 <span class="hljs-keyword">long</span> startTime1 = System.currentTimeMillis();
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span> * <span class="hljs-number">100</span> * <span class="hljs-number">100</span>; i++) {
-    arrayList.add(i);
+    ArrayList.add(i);
 }
 <span class="hljs-keyword">long</span> endTime1 = System.currentTimeMillis();
 System.out.println(<span class="hljs-string">&quot;ArrayList &#x7528;&#x65F6;&#xFF1A;&quot;</span> + (endTime1 - startTime1) + <span class="hljs-string">&quot; &#x6BEB;&#x79D2;&quot;</span>);
-</code></pre>
-<pre><code class="lang-java">LinkedList&lt;Integer&gt; linkedList = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
+LinkedList&lt;Integer&gt; LinkedList = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
 <span class="hljs-keyword">long</span> startTime2 = System.currentTimeMillis();
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span> * <span class="hljs-number">100</span> * <span class="hljs-number">100</span>; i++) {
-    linkedList.add(i);
+    LinkedList.add(i);
 }
 <span class="hljs-keyword">long</span> endTime2 = System.currentTimeMillis();
 System.out.println(<span class="hljs-string">&quot;LinkedList &#x7528;&#x65F6;&#xFF1A;&quot;</span> + (endTime2 - startTime2) + <span class="hljs-string">&quot; &#x6BEB;&#x79D2;&quot;</span>);
 </code></pre>
-<p>&#x4E0A;&#x8FF0;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x662F;&#x6D4B;&#x8BD5; ArrayList&#x3001;LinkedList &#x5728;&#x63D2;&#x5165;&#x5143;&#x7D20;&#x65F6;&#x7684;&#x65F6;&#x95F4;&#x6D88;&#x8017;</p>
-<p>&#x540C;&#x6837;&#x7684;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x4FEE;&#x6539;&#x5143;&#x7D20;&#x7684;&#x65F6;&#x95F4;&#x6D88;&#x8017;</p>
-<p>&#x8FD9;&#x53EF;&#x4EE5;&#x5F88;&#x660E;&#x786E;&#x7684;&#x8BA4;&#x8BC6;&#x5230;&#xFF1A;&#x6570;&#x7EC4;&#x3001;&#x94FE;&#x8868;&#x8FD9;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7684;&#x5DEE;&#x5F02;</p>
-<p>&#x540C;&#x6837;&#x7EE7;&#x627F;&#x81EA; <code>List</code> &#x63A5;&#x53E3;&#x7684; <code>LinkedList</code> &#x5BB9;&#x5668;&#xFF0C;<strong>&#x6269;&#x5C55;&#x65B9;&#x6CD5;</strong> &#x5982;&#x4E0B;</p>
+<p>&#x8FD9;&#x6B63;&#x662F;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7684;&#x9B45;&#x529B;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x4E86;&#x89E3;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5173;&#x4E8E;&#x5185;&#x5B58;&#x5B58;&#x50A8;&#x7684;&#x7EC6;&#x8282;&#xFF0C;&#x90A3;&#x5C31;&#x518D;&#x597D;&#x4E0D;&#x8FC7;&#x4E86;&#x3002;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5BF9;&#x4E8E;&#x8FDE;&#x7EED;&#x3001;&#x4E0D;&#x8FDE;&#x7EED;&#x6570;&#x636E;&#x7684;&#x5904;&#x7406;&#x95EE;&#x9898;&#xFF0C;&#x53EA;&#x770B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x8FD8;&#x662F;&#x4F1A;&#x5B58;&#x5728;&#x4E9B;&#x8BB8;&#x7684;&#x7591;&#x60D1;</p>
+<h1 id="&#x57FA;&#x672C;&#x4F7F;&#x7528;">&#x57FA;&#x672C;&#x4F7F;&#x7528;</h1>
+<p>&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x4E5F;&#x4F7F;&#x5F97; LinkedList&#x3001;ArrayList &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x7237;&#x5B58;&#x5728;&#x8F83;&#x5927;&#x7684;&#x5DEE;&#x5F02;</p>
+<p>&#x5BF9;&#x4E8E; LinkedList&#xFF0C;&#x5B83;&#x6269;&#x5C55;&#x4E86;&#x5982;&#x4E0B;&#x7684;&#x65B9;&#x6CD5;</p>
 <ul>
 <li><code>void addFirst(E e)</code> &#xFF1A;&#x5C06;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5230;&#x5F00;&#x5934;&#x4F4D;&#x7F6E;</li>
 <li><code>void addLast(E e)</code> &#xFF1A;&#x5C06;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5230;&#x7ED3;&#x5C3E;&#x4F4D;&#x7F6E;</li>
@@ -1409,83 +1403,59 @@ System.out.println(<span class="hljs-string">&quot;LinkedList &#x7528;&#x65F6;&#
 <li><code>void push(E e)</code> &#xFF1A;&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x81F3;&#x5217;&#x8868;&#x7684;&#x5F00;&#x5934;&#x4F4D;&#x7F6E;</li>
 <li><code>boolean isEmpty()</code> &#xFF1A;&#x5224;&#x65AD;&#x5217;&#x8868;&#x662F;&#x5426;&#x4E3A;&#x7A7A;</li>
 </ul>
-<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#x7684; <code>LinkedList</code>&#xFF0C;&#x5728;&#x7EE7;&#x627F; <code>List</code> &#x63A5;&#x53E3;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x62D3;&#x5C55;&#x4E86;&#x72EC;&#x6709;&#x65B9;&#x6CD5;</p>
-<p><code>LinkedList</code> &#x7684;&#x4F7F;&#x7528;&#x6848;&#x4F8B;</p>
-<pre><code class="lang-java">LinkedList&lt;String&gt; linkedList = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
+<pre><code class="lang-java">LinkedList&lt;String&gt; LinkedList = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
 
 <span class="hljs-comment">// &#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x81F3;&#x5217;&#x8868;&#x7684;&#x5F00;&#x5934;&#x3001;&#x7ED3;&#x5C3E;</span>
-linkedList.addFirst(<span class="hljs-string">&quot;A&quot;</span>);
-linkedList.addFirst(<span class="hljs-string">&quot;B&quot;</span>);
-linkedList.addFirst(<span class="hljs-string">&quot;C&quot;</span>);
-linkedList.addLast(<span class="hljs-string">&quot;D&quot;</span>);
+LinkedList.addFirst(<span class="hljs-string">&quot;A&quot;</span>);
+LinkedList.addFirst(<span class="hljs-string">&quot;B&quot;</span>);
+LinkedList.addFirst(<span class="hljs-string">&quot;C&quot;</span>);
+LinkedList.addLast(<span class="hljs-string">&quot;D&quot;</span>);
 
 <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6B64;&#x5217;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3001;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</span>
-System.out.println(linkedList.getFirst());
-System.out.println(linkedList.getLast());
+System.out.println(LinkedList.getFirst());
+System.out.println(LinkedList.getLast());
 
 <span class="hljs-comment">// &#x79FB;&#x9664;&#x8BE5;&#x5217;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3001;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;</span>
-System.out.println(linkedList.removeFirst());
-System.out.println(linkedList.removeLast());
-<span class="hljs-keyword">for</span> (String s : linkedList) {
+System.out.println(LinkedList.removeFirst());
+System.out.println(LinkedList.removeLast());
+<span class="hljs-keyword">for</span> (String s : LinkedList) {
     System.out.println(s);
 }
 
 <span class="hljs-comment">// &#x5F39;&#x51FA;&#x8BE5;&#x5217;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20; removeFirst()</span>
-System.out.println(linkedList.pop());
+System.out.println(LinkedList.pop());
 
 <span class="hljs-comment">// &#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x81F3;&#x5217;&#x8868;&#x7684;&#x5F00;&#x5934;&#x4F4D;&#x7F6E; addFirst()</span>
-linkedList.push(<span class="hljs-string">&quot;E&quot;</span>);
+LinkedList.push(<span class="hljs-string">&quot;E&quot;</span>);
 
 <span class="hljs-comment">// &#x5224;&#x65AD;&#x5217;&#x8868;&#x662F;&#x5426;&#x4E3A;&#x7A7A;</span>
-System.out.println(linkedList.isEmpty());
+System.out.println(LinkedList.isEmpty());
 </code></pre>
-<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;inkedList &#x9664;&#x4E86;&#x5B9E;&#x73B0; List &#x63A5;&#x53E3;&#xFF0C;&#x8FD8;&#x5B9E;&#x73B0;&#x4E86; Deque &#x63A5;&#x53E3;</p>
-<p>&#x800C;&#x5176;&#x4E2D;&#x7684; Deque &#x63A5;&#x53E3;&#xFF0C;&#x5219;&#x5B9E;&#x73B0;&#x4E86; Queue &#x63A5;&#x53E3;</p>
-<h3 id="&#x5B9E;&#x73B0;-deque">&#x5B9E;&#x73B0; Deque</h3>
-<p>LinkedList&#x76F4;&#x63A5;&#x5B9E;&#x73B0;&#x4E86;Deque&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x53CC;&#x7AEF;&#x961F;&#x5217;</p>
-<p>&#x5BF9;&#x4E8E;&#x53CC;&#x7AEF;&#x961F;&#x5217;&#xFF0C;&#x5B83;&#x540C;&#x65F6;&#x5177;&#x6709;&#x6808;&#x3001;&#x961F;&#x5217;&#x7684;&#x7279;&#x5F81;&#xFF0C;&#x9700;&#x8981;&#x533A;&#x5206;&#x5F00;</p>
-<p>&#x53CC;&#x7AEF;&#x961F;&#x5217;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5934;&#x90E8;&#x3001;&#x5C3E;&#x90E8;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5143;&#x7D20;</p>
-<p>Deque&#x6269;&#x5C55;&#x4E86;&#x5982;&#x4E0B;&#x7684;&#x65B9;&#x6CD5;</p>
+<h1 id="&#x521D;&#x59CB;&#x5316;">&#x521D;&#x59CB;&#x5316;</h1>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">LinkedList</span><span class="hljs-params">()</span> </span>{
+}
+</code></pre>
+<p>&#x8FD9;&#x662F; LinkedList &#x7684;&#x4E3A;&#x7A7A;&#x6269;&#x5BB9;&#xFF0C;&#x5F88;&#x60CA;&#x8BB6;&#x3002;&#x8FD9;&#x4EC5;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E0D;&#x5B58;&#x5728;&#x5176;&#x5B83;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;<strong>LinkedList &#x4E0D;&#x5B58;&#x5728;&#x521D;&#x59CB;&#x5BB9;&#x91CF;</strong></p>
+<p>&#x5E95;&#x5C42;&#x57FA;&#x4E8E;&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#xFF0C;&#x6570;&#x636E;&#x5143;&#x7D20;&#x7684;&#x6DFB;&#x52A0;&#x64CD;&#x4F5C;&#xFF0C;&#x4E0D;&#x518D;&#x50CF; ArrayList &#x4E00;&#x6837;&#x3002;LinkedList &#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x6DFB;&#x52A0;&#xFF0C;&#x4EC5;&#x6D89;&#x53CA;&#x5230;&#x81F3;&#x591A;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5373;&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x7684;&#x524D;&#x9A71;&#x5143;&#x7D20;&#x3001;&#x540E;&#x7EE7;&#x5143;&#x7D20;</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/47ddddbc21cb4b5a8c30fab74eb22b0a~tplv-k3u1fbpfcp-watermark.image" alt="&#x53CC;&#x5411;&#x94FE;&#x8868;LinkedList.jpg"></p>
+<p>&#x4E0A;&#x8FF0;&#x56FE;&#x7247;&#xFF0C;&#x662F; LinkedList &#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x65F6;&#x7684;&#x793A;&#x610F;&#x56FE;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x540E;&#x9762;&#x5143;&#x7D20;&#x7684;&#x6574;&#x4F53;&#x540E;&#x79FB;&#xFF0C;&#x4EC5;&#x662F;&#x4FEE;&#x6539;&#x6307;&#x9488;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x5173;&#x4E8E;&#x8282;&#x70B9;&#x7C7B;&#x7684;&#x8BA8;&#x8BBA;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x52A0;&#x6DF1;&#x7406;&#x89E3;</p>
+<h1 id="&#x6269;&#x5BB9;">&#x6269;&#x5BB9;</h1>
+<p>&#x6269;&#x5BB9;&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x91CD;&#x70B9;&#x662F;&#x8BA8;&#x8BBA; LinkedList &#x5BF9;&#x4E8E;&#x5143;&#x7D20;&#x7684;&#x6DFB;&#x52A0;&#x64CD;&#x4F5C;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x6307;&#x9488;&#x662F;&#x5982;&#x4F55;&#x53D8;&#x5316;&#x7684;</p>
+<p>&#x9700;&#x8981;&#x5148;&#x8BA4;&#x8BC6;&#x51E0;&#x4E2A;&#x6982;&#x5FF5;&#xFF0C;&#x5173;&#x4E8E;&#x9996;&#x3001;&#x5C3E;&#x6307;&#x9488;&#x4E0E;&#x8282;&#x70B9;&#x7C7B;</p>
 <ul>
-<li><code>void push()</code>&#xFF1A;&#x5934;&#x90E8;&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#xFF0C;&#x6808;&#x6EA2;&#x51FA;&#x5219;&#x629B;&#x51FA;&#x5F02;&#x5E38;</li>
-<li><code>E push(E e)</code>&#xFF1A;&#x67E5;&#x8BE2;&#x5934;&#x90E8;&#x5143;&#x7D20;&#xFF0C;&#x6808;&#x4E3A;&#x7A7A;&#x5219;&#x8FD4;&#x56DE;NULL</li>
-<li><code>E pop()</code>&#xFF1A;&#x67E5;&#x770B;&#x5E76;&#x5220;&#x9664;&#x5934;&#x90E8;&#x5143;&#x7D20;&#xFF0C;&#x6808;&#x4E3A;&#x7A7A;&#x5219;&#x629B;&#x51FA;&#x5F02;&#x5E38;</li>
+<li><strong>Node<e> first</e></strong>&#xFF1A;&#x9996;&#x8282;&#x70B9;&#xFF0C;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</li>
+<li><strong>Node<e> last</e></strong>&#xFF1A;&#x5C3E;&#x8282;&#x70B9;&#xFF0C;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</li>
 </ul>
-<pre><code class="lang-java">Deque&lt;Integer&gt; deque = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
-deque.push(<span class="hljs-number">1</span>);
-deque.push(<span class="hljs-number">2</span>);
-System.out.println(deque.size());
-</code></pre>
-<h3 id="&#x5B9E;&#x73B0;-queue">&#x5B9E;&#x73B0; Queue</h3>
-<p>LinkedList &#x95F4;&#x63A5;&#x5B9E;&#x73B0;&#x4E86; Queue &#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x961F;&#x5217;</p>
-<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;Queue &#x63A5;&#x53E3;&#x4E5F;&#x7EE7;&#x627F;&#x4E86; Collection &#x7C7B;&#xFF0C;&#x5E76;&#x6269;&#x5C55;&#x4E86;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;</p>
-<p>Queue&#x63A5;&#x53E3;&#x6269;&#x5C55;&#x7684;&#x65B9;&#x6CD5;</p>
-<ul>
-<li><code>boolean add(E e)</code>&#xFF1A;&#x5C3E;&#x90E8;&#x6DFB;&#x52A0;&#x5143;&#x7D20;</li>
-<li><code>boolean offer(E e)</code>&#xFF1A;&#x5C3E;&#x90E8;&#x6DFB;&#x52A0;&#x5143;&#x7D20;</li>
-<li><code>E element()</code>&#xFF1A;&#x67E5;&#x8BE2;&#x5934;&#x90E8;&#x5143;&#x7D20;&#xFF0C;&#x4F46;&#x4E0D;&#x5220;&#x9664;</li>
-<li><code>E peek()</code>&#xFF1A;&#x67E5;&#x8BE2;&#x5934;&#x90E8;&#x5143;&#x7D20;&#xFF0C;&#x4F46;&#x4E0D;&#x5220;&#x9664;</li>
-<li><code>E pull()</code>&#xFF1A;&#x67E5;&#x8BE2;&#x5934;&#x90E8;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x5220;&#x9664;</li>
-<li><code>E remove()</code>&#xFF1A;&#x67E5;&#x8BE2;&#x5934;&#x90E8;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x5220;&#x9664;</li>
-</ul>
-<pre><code class="lang-java">Queue&lt;Integer&gt; integers = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
-integers.add(<span class="hljs-number">1</span>);
-integers.add(<span class="hljs-number">2</span>);
-System.out.println(integers.size());
-</code></pre>
-<h3 id="&#x8282;&#x70B9;&#x5BF9;&#x8C61;">&#x8282;&#x70B9;&#x5BF9;&#x8C61;</h3>
-<p>&#x5BF9;&#x4E8E; <code>LinkedList</code> &#x6E90;&#x7801;&#x7684;&#x5206;&#x6790;&#xFF0C;&#x662F;&#x4E0E; <code>ArrayList</code>&#x3001;<code>Vector</code> &#x5B58;&#x5728;&#x8F83;&#x5927;&#x5DEE;&#x5F02;&#x7684;</p>
-<p><code>LinkedList</code> &#x57FA;&#x4E8E;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;&#x6BCF;&#x4E2A;&#x5B58;&#x50A8;&#x5355;&#x5143;&#xFF0C;&#x90FD;&#x5B58;&#x5728;&#x4E24;&#x4E2A;&#x9996;&#x3001;&#x5C3E;&#x8282;&#x70B9;</p>
-<p><code>LinkedList</code>&#x7684;&#x8282;&#x70B9;&#x7C7B;&#xFF1A;&#x79C1;&#x6709;&#x3001;&#x9759;&#x6001;&#x3001;&#x5185;&#x90E8;&#x7C7B;</p>
-<pre><code class="lang-Java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>&lt;<span class="hljs-title">E</span>&gt; </span>{
-    <span class="hljs-comment">// item&#xFF1A;&#x6570;&#x636E;&#x5143;&#x7D20;</span>
+<p>&#x518D;&#x8BA4;&#x8BC6;&#x4E00;&#x4E0B;&#x8282;&#x70B9;&#x7C7B; Node&#xFF0C;&#x5B83;&#x5F88;&#x91CD;&#x8981;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>&lt;<span class="hljs-title">E</span>&gt; </span>{
+    <span class="hljs-comment">// &#x5F53;&#x524D;&#x5143;&#x7D20;</span>
     E item;
-    <span class="hljs-comment">// next&#xFF1A;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3001;&#x5C3E;&#x8282;&#x70B9;</span>
+    <span class="hljs-comment">// &#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x4E0B;&#x4E00;&#x8282;&#x70B9;&#xFF0C;&#x5373;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</span>
     Node&lt;E&gt; next;
-    <span class="hljs-comment">// prev&#xFF1A;&#x4E0A;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3001;&#x9996;&#x8282;&#x70B9;</span>
+    <span class="hljs-comment">// &#x5F53;&#x524D;&#x5143;&#x7D20;&#x7684;&#x4E0A;&#x4E00;&#x8282;&#x70B9;&#xFF0C;&#x5373;&#x524D;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</span>
     Node&lt;E&gt; prev;
 
-    <span class="hljs-comment">// &#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x5B58;&#x50A8;&#x5355;&#x5143;&#xFF0C;&#x5B58;&#x5728;&#x6570;&#x636E;&#x5143;&#x7D20;&#x3001;&#x4E24;&#x4E2A;&#x6307;&#x5411;&#x8282;&#x70B9;</span>
+    <span class="hljs-comment">// &#x6709;&#x53C2;&#x6784;&#x9020;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7C7B;&#xFF0C;&#x4E2D;&#x95F4;&#x4E3A;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5143;&#x7D20;&#xFF0C;&#x4E24;&#x4FA7;&#x4E3A;&#x540E;&#x7EE7;&#x3001;&#x524D;&#x9A71;&#x8282;&#x70B9;&#xFF08;&#x5143;&#x7D20;&#xFF09;</span>
     Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) {
         <span class="hljs-keyword">this</span>.item = element;
         <span class="hljs-keyword">this</span>.next = next;
@@ -1493,193 +1463,136 @@ System.out.println(integers.size());
     }
 }
 </code></pre>
-<h3 id="&#x8282;&#x70B9;&#x6DFB;&#x52A0;">&#x8282;&#x70B9;&#x6DFB;&#x52A0;</h3>
-<p><code>LinkedList</code> &#x7684;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#xFF1A;&#x6B63;&#x5E38;&#x6DFB;&#x52A0;&#xFF0C;&#x4E86;&#x89E3;&#x8282;&#x70B9;&#x7C7B;&#x7684;&#x4F7F;&#x7528;</p>
-<pre><code class="lang-java"><span class="hljs-comment">// &#x6DFB;&#x52A0;&#x5143;&#x7D20;&#xFF0C;&#x5728;&#x5C3E;&#x90E8;&#x63D2;&#x5165;&#x8282;&#x70B9;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">add</span><span class="hljs-params">(E e)</span> </span>{
-    linkLast(e);
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
-}
-
-<span class="hljs-comment">// &#x63D2;&#x5165;&#x5C3E;&#x8282;&#x70B9;</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">linkLast</span><span class="hljs-params">(E e)</span> </span>{
-    <span class="hljs-comment">// last&#xFF1A;&#x6307;&#x5411;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x5F00;&#x59CB;&#x9ED8;&#x8BA4;&#x4E3A;NULL</span>
-    <span class="hljs-keyword">final</span> Node&lt;E&gt; l = last;
-    <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x586B;&#x5165;&#x6570;&#x636E;&#x5143;&#x7D20;</span>
-    <span class="hljs-keyword">final</span> Node&lt;E&gt; newNode = <span class="hljs-keyword">new</span> Node&lt;&gt;(l, e, <span class="hljs-keyword">null</span>);
-    <span class="hljs-comment">// &#x5C06;&#x65B0;&#x5EFA;&#x7684;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x8D4B;&#x503C;&#x7ED9;last&#x6307;&#x9488;</span>
-    last = newNode;
-    <span class="hljs-comment">// &#x5224;&#x65AD;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</span>
-    <span class="hljs-keyword">if</span> (l == <span class="hljs-keyword">null</span>)
-        <span class="hljs-comment">// &#x82E5;&#x4E0D;&#x5B58;&#x5728;&#x4E0B;&#x4E00;&#x8282;&#x70B9;&#xFF0C;&#x5C06;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x8BBE;&#x4E3A;&#x5C3E;&#x8282;&#x70B9;</span>
-        first = newNode;
-    <span class="hljs-keyword">else</span>
-        <span class="hljs-comment">// &#x82E5;&#x5B58;&#x5728;&#x4E0B;&#x4E00;&#x8282;&#x70B9;&#xFF0C;&#x5C06;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x8BBE;&#x4E3A;&#x4E0A;&#x4E00;&#x8282;&#x70B9;</span>
-        l.next = newNode;
-    <span class="hljs-comment">// size&#xFF1A;&#x8BB0;&#x5F55;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7684;&#x8282;&#x70B9;&#x4E2A;&#x6570;&#xFF0C;&#x7B49;&#x540C;&#x4E8E;&#x8BB0;&#x5F55;&#x6570;&#x636E;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;</span>
-    size++;
-    modCount++;
-}
-</code></pre>
-<p>&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x7406;&#x89E3;&#x786E;&#x5B9E;&#x662F;&#x6709;&#x4E9B;&#x9EBB;&#x70E6;</p>
-<p><img src="../styles/IMAGES/&#x53CC;&#x5411;&#x94FE;&#x8868;LinkedList.jpg" alt="&#x53CC;&#x5411;&#x94FE;&#x8868;LinkedList"></p>
-<p>&#x73B0;&#x5728;&#xFF0C;&#x5411; <code>LinkedList</code> &#x4E2D;&#x63D2;&#x5165;&#x4E09;&#x4E2A;&#x6570;&#x636E;&#x5143;&#x7D20;&#xFF0C;&#x6210;&#x5458; A&#x3001;B&#x3001;C</p>
-<p>&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#xFF08;&#x6210;&#x5458; A&#xFF09;&#xFF1A;&#x9996;&#x3001;&#x5C3E;&#x8282;&#x70B9;&#x4E3A; NULL</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">linkLast</span><span class="hljs-params">(E e)</span> </span>{
-    <span class="hljs-comment">// last&#xFF1A;&#x8BB0;&#x5F55;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x6B64;&#x65F6;&#x4E3A; NULL</span>
-    <span class="hljs-keyword">final</span> Node&lt;E&gt; l = last;
-    <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x9996;&#x3001;&#x5C3E;&#x8282;&#x70B9;&#x4E3A; NULL</span>
-    <span class="hljs-keyword">final</span> Node&lt;E&gt; newNode = <span class="hljs-keyword">new</span> Node&lt;&gt;(l, e, <span class="hljs-keyword">null</span>);
-    <span class="hljs-comment">// &#x5F53;&#x524D;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x8D4B;&#x503C;&#x7ED9; last &#x6307;&#x9488;</span>
-    last = newNode;
-    <span class="hljs-keyword">if</span> (l == <span class="hljs-keyword">null</span>)
-        <span class="hljs-comment">// first&#xFF1A;&#x8BB0;&#x5F55;&#x4E86;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
-        <span class="hljs-comment">// &#x6B64;&#x65F6;&#xFF0C;&#x5C06;&#x6210;&#x5458; A &#x8BB0;&#x5F55;&#x4E3A;&#x4E86;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
-        first = newNode;
-    <span class="hljs-keyword">else</span>
-        l.next = newNode;
-    size++;
-    modCount++;
-}
-</code></pre>
-<p>&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#xFF08;&#x6210;&#x5458; B&#xFF09;&#xFF1A;&#x5B58;&#x5728;&#x4E0A;&#x4E00;&#x8282;&#x70B9;&#xFF0C;&#x6210;&#x5458; A</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">linkLast</span><span class="hljs-params">(E e)</span> </span>{
-    <span class="hljs-comment">// last &#x6307;&#x9488;&#x8BB0;&#x5F55;&#x4E86;&#x4E0A;&#x4E00;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x6210;&#x5458; A</span>
-    <span class="hljs-keyword">final</span> Node&lt;E&gt; l = last;
-    <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x5B58;&#x5728;&#x4E0A;&#x4E00;&#x8282;&#x70B9;&#xFF0C;&#x4E0B;&#x4E00;&#x8282;&#x70B9;&#x4E3A; NULL</span>
-    <span class="hljs-keyword">final</span> Node&lt;E&gt; newNode = <span class="hljs-keyword">new</span> Node&lt;&gt;(l, e, <span class="hljs-keyword">null</span>);
-    <span class="hljs-comment">// &#x5F53;&#x524D;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x4E3A;&#x6210;&#x5458; B&#xFF0C;&#x8D4B;&#x503C;&#x7ED9; last &#x6307;&#x9488;</span>
-    last = newNode;
-    <span class="hljs-keyword">if</span> (l == <span class="hljs-keyword">null</span>)
-        first = newNode;
-    <span class="hljs-keyword">else</span>
-        <span class="hljs-comment">// &#x5C06;&#x4E0A;&#x4E00;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x7684;&#x5C3E;&#x8282;&#x70B9;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
-        <span class="hljs-comment">// &#x6210;&#x5458; A &#x7684;&#x4E0B;&#x4E00;&#x8282;&#x70B9;&#x7531; NULL &#x66F4;&#x6539;&#x4E3A;&#x6210;&#x5458; B</span>
-        l.next = newNode;
-    size++;
-    modCount++;
-}
-</code></pre>
-<p>&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#xFF08;&#x6210;&#x5458; C&#xFF09;&#xFF1A;&#x5B58;&#x5728;&#x4E0A;&#x4E00;&#x8282;&#x70B9;&#xFF0C;&#x6210;&#x5458; B</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">linkLast</span><span class="hljs-params">(E e)</span> </span>{
-    <span class="hljs-comment">// last &#x6307;&#x9488;&#x8BB0;&#x5F55;&#x4E86;&#x4E0A;&#x4E00;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x6210;&#x5458; B</span>
-    <span class="hljs-keyword">final</span> Node&lt;E&gt; l = last;
-    <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x5B58;&#x5728;&#x4E0A;&#x4E00;&#x8282;&#x70B9;&#xFF0C;&#x4E0B;&#x4E00;&#x8282;&#x70B9;&#x4E3A; NULL</span>
-    <span class="hljs-keyword">final</span> Node&lt;E&gt; newNode = <span class="hljs-keyword">new</span> Node&lt;&gt;(l, e, <span class="hljs-keyword">null</span>);
-    <span class="hljs-comment">// &#x5F53;&#x524D;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x4E3A;&#x6210;&#x5458; C&#xFF0C;&#x8D4B;&#x503C;&#x7ED9; last &#x6307;&#x9488;</span>
-    last = newNode;
-    <span class="hljs-keyword">if</span> (l == <span class="hljs-keyword">null</span>)
-        first = newNode;
-    <span class="hljs-keyword">else</span>
-        <span class="hljs-comment">// &#x5C06;&#x4E0A;&#x4E00;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x7684;&#x5C3E;&#x8282;&#x70B9;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
-        <span class="hljs-comment">// &#x6210;&#x5458; B &#x7684;&#x4E0B;&#x4E00;&#x8282;&#x70B9;&#x7531; NULL &#x66F4;&#x6539;&#x4E3A;&#x6210;&#x5458; C</span>
-        l.next = newNode;
-    size++;
-    modCount++;
-}
-</code></pre>
-<p>&#x4E0A;&#x8FF0;&#x662F;&#x5BF9;&#x4E8E; <code>LinkedList</code> &#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF0C;&#x6838;&#x5FC3;&#x5728;&#x4E8E;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x7684;&#x9996;&#x5C3E;&#x3001;&#x524D;&#x540E;&#x8282;&#x70B9;&#x6307;&#x9488;</p>
-<hr>
-<p><code>LinkedList</code> <strong>&#x6DFB;&#x52A0;&#x5934;&#x90E8;&#x8282;&#x70B9;</strong>&#xFF1A;void addFirst(E e);</p>
+<p>&#x7B80;&#x5355;&#x7406;&#x89E3;&#x4E3A;&#xFF0C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5143;&#x7D20;&#x7684;&#x6DFB;&#x52A0;&#xFF0C;&#x53EF;&#x4EE5;&#x5C01;&#x88C5;&#x4E3A;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7C7B;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x4E3A;&#x5B83;&#x6307;&#x5B9A;&#x4E0A;&#x4E00;&#x4E2A;&#x3001;&#x4E0B;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5143;&#x7D20;&#xFF0C;&#x4EE5;&#x8282;&#x70B9;&#x7C7B;&#x7684;&#x5F62;&#x5F0F;</p>
+<p>&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x7684;&#x662F;&#xFF0C;&#x9996;&#x5143;&#x7D20;&#x53EA;&#x5B58;&#x5728;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#xFF1B;&#x5C3E;&#x5143;&#x7D20;&#x53EA;&#x5B58;&#x5728;&#x524D;&#x9A71;&#x8282;&#x70B9;</p>
+<p>&#x7406;&#x89E3;&#x4E86;&#x8FD9;&#x4E9B;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x662F;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x8282;&#x70B9;&#x7C7B;&#x7684;&#x8FD0;&#x7528;&#xFF0C;&#x660E;&#x767D;&#x8282;&#x70B9;&#x7C7B;&#x8BBE;&#x8BA1;&#x7684;&#x5FC5;&#x8981;&#x6027;</p>
+<h2 id="&#x9996;&#x8282;&#x70B9;">&#x9996;&#x8282;&#x70B9;</h2>
 <pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addFirst</span><span class="hljs-params">(E e)</span> </span>{
     linkFirst(e);
 }
-
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">linkFirst</span><span class="hljs-params">(E e)</span> </span>{
-    <span class="hljs-comment">// first&#xFF1A;&#x8BB0;&#x5F55;&#x4E86;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
-    <span class="hljs-comment">// &#x6CE8;&#x610F;&#xFF0C;&#x4EFB;&#x610F;&#x65B9;&#x5F0F;&#x6DFB;&#x52A0;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x540C;&#x65F6;&#x8D4B;&#x503C;&#x7ED9; last&#x3001;first</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">linkFirst</span><span class="hljs-params">(E e)</span> </span>{
+    <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8282;&#x70B9;&#x7C7B; f&#xFF0C;&#x63A5;&#x6536;&#x5F53;&#x524D;&#x7684;&#x9996;&#x8282;&#x70B9;</span>
     <span class="hljs-keyword">final</span> Node&lt;E&gt; f = first;
-    <span class="hljs-comment">// &#x5EFA;&#x7ACB;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x524D;&#x540E;&#x8282;&#x70B9;&#x4E3A; NULL&#xFF0C;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5143;&#x7D20;</span>
+    <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8282;&#x70B9;&#x7C7B;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C06;&#x9996;&#x8282;&#x70B9;&#x8BBE;&#x7F6E;&#x4E3A;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#xFF0C;&#x539F;&#x9996;&#x8282;&#x70B9;&#x4F4D;&#x7F6E;&#x8BBE;&#x7F6E;&#x4E3A; null&#xFF0C;&#x5373;&#x4E0D;&#x5B58;&#x5728;&#x9996;&#x8282;&#x70B9;</span>
     <span class="hljs-keyword">final</span> Node&lt;E&gt; newNode = <span class="hljs-keyword">new</span> Node&lt;&gt;(<span class="hljs-keyword">null</span>, e, f);
-    <span class="hljs-comment">// &#x5F53;&#x524D;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x8D4B;&#x503C;&#x7ED9;first&#xFF0C;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-comment">// &#x5C06;&#x65B0;&#x5EFA;&#x7684;&#x8282;&#x70B9;&#x7C7B; newNode &#x8D4B;&#x503C;&#x7ED9;&#x5168;&#x5C40;&#x9996;&#x8282;&#x70B9;</span>
     first = newNode;
+    <span class="hljs-comment">// &#x82E5;&#x4E0D;&#x5B58;&#x5728;&#x9996;&#x8282;&#x70B9;</span>
     <span class="hljs-keyword">if</span> (f == <span class="hljs-keyword">null</span>)
-        <span class="hljs-comment">// &#x82E5;LinkedList&#x53EA;&#x5B58;&#x5728;&#x5F53;&#x524D;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x4F5C;&#x4E3A;&#x9996;&#x3001;&#x5C3E;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x5B58;&#x5728;</span>
+        <span class="hljs-comment">// &#x5219;&#x65B0;&#x5EFA;&#x7684;&#x8282;&#x70B9;&#x7C7B; newNode&#xFF0C;&#x65E2;&#x4F5C;&#x4E3A;&#x9996;&#x8282;&#x70B9;&#xFF0C;&#x4E5F;&#x4F5C;&#x4E3A;&#x5C3E;&#x8282;&#x70B9;</span>
         last = newNode;
     <span class="hljs-keyword">else</span>
-        <span class="hljs-comment">// &#x82E5;&#x5B58;&#x5728;&#x5176;&#x5B83;&#x7684;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x4F5C;&#x4E3A;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x7684;&#x4E0B;&#x4E00;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
+        <span class="hljs-comment">// &#x5426;&#x5219;&#xFF0C;&#x5C06;&#x539F;&#x5148;&#x7684;&#x9996;&#x8282;&#x70B9;&#xFF0C;&#x5176;&#x524D;&#x9A71;&#x8282;&#x70B9;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D;&#x65B0;&#x5EFA;&#x7684;&#x8282;&#x70B9; newNode</span>
         f.prev = newNode;
+    <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x8282;&#x70B9;&#x6570;</span>
     size++;
+    <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x7684;&#x6B21;&#x6570;</span>
     modCount++;
 }
 </code></pre>
-<p>&#x4ECE; <code>LinkedList</code> &#x6DFB;&#x52A0;&#x5934;&#x90E8;&#x8282;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x5F88;&#x6E05;&#x6670;&#x7684;&#x8BA4;&#x8BC6;&#x5230;</p>
-<ul>
-<li>&#x4EFB;&#x4F55;&#x65B9;&#x5F0F;&#x6DFB;&#x52A0;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x4F1A;&#x540C;&#x65F6;&#x4F5C;&#x4E3A;&#x9996;&#x5C3E;&#x8282;&#x70B9;&#x5B58;&#x5728;&#xFF0C;&#x5E76;&#x8D4B;&#x503C;&#x7ED9; <code>first</code>&#x3001;<code>last</code></li>
-<li><code>first</code> &#x6307;&#x9488;&#xFF0C;&#x6307;&#x5411;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x9996;&#x8282;&#x70B9;&#x7684;&#x524D;&#x9A71;&#x5143;&#x7D20;&#x4E3A; NULL</li>
-<li><code>last</code> &#x6307;&#x9488;&#xFF0C;&#x6307;&#x5411;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x5C3E;&#x8282;&#x70B9;&#x7684;&#x540E;&#x7EE7;&#x5143;&#x7D20;&#x4E3A; NULL</li>
-<li>&#x9664;&#x9996;&#x3001;&#x5C3E;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x5916;&#xFF0C;&#x5176;&#x4F59;&#x7686;&#x5B58;&#x5728;&#x524D;&#x3001;&#x540E;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</li>
-</ul>
-<hr>
-<p><code>LinkedList</code> <strong>&#x6DFB;&#x52A0;&#x6307;&#x5B9A;&#x8282;&#x70B9;</strong>&#xFF1A;void add(int index, E element) {};</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, E element)</span> </span>{
-    <span class="hljs-comment">// &#x5224;&#x65AD;&#x8F93;&#x5165;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x662F;&#x5426;&#x5B58;&#x5728;&#x95EE;&#x9898;</span>
-    checkPositionIndex(index);
-    <span class="hljs-comment">// &#x82E5; index==size&#xFF0C;&#x5219;&#x662F;&#x4F5C;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5B58;&#x5728;&#xFF0C;&#x6B63;&#x5E38;&#x8C03;&#x7528; linkLast()</span>
-    <span class="hljs-comment">// &#x8003;&#x8651;&#x5230;&#x4E86;&#xFF0C;&#x63D2;&#x5165;&#x7684;&#x8282;&#x70B9;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x53EF;&#x80FD;&#xFF0C;nice&#xFF01;&#xFF01;</span>
-    <span class="hljs-keyword">if</span> (index == size)
-        linkLast(element);
-    <span class="hljs-keyword">else</span>
-        <span class="hljs-comment">// &#x5426;&#x5219;&#x8C03;&#x7528; linkBefore(element, node(index))</span>
-        linkBefore(element, node(index));
+<p>&#x770B;&#xFF01;&#x591A;&#x4E48;&#x7684;&#x7CBE;&#x5999;&#xFF01;</p>
+<p>&#x82E5;&#x5BB9;&#x5668;&#x5185;&#x4E0D;&#x5B58;&#x5728;&#x6570;&#x636E;&#x5143;&#x7D20;&#xFF0C;&#x5219;&#x6DFB;&#x52A0;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7C7B;&#xFF0C;&#x540C;&#x65F6;&#x4F5C;&#x4E3A;&#x524D;&#x9A71;&#x3001;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#xFF1B;&#x82E5;&#x5BB9;&#x5668;&#x5185;&#x5DF2;&#x5B58;&#x5728;&#x6570;&#x636E;&#x5143;&#x7D20;&#xFF08;&#x5927;&#x4E8E; 0&#xFF09;&#xFF0C;&#x5373;&#x6709;&#x9996;&#x8282;&#x70B9;&#x3001;&#x5C3E;&#x8282;&#x70B9;&#xFF0C;&#x5219;&#x5C06;&#x52A0;&#x5165;&#x7684;&#x8282;&#x70B9;&#x7C7B;&#x4F5C;&#x4E3A;&#x9996;&#x8282;&#x70B9;&#xFF0C;&#x539F;&#x9996;&#x8282;&#x70B9;&#x5C06;&#x524D;&#x9A71;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D;&#x52A0;&#x5165;&#x7684;&#x8282;&#x70B9;&#x7C7B;</p>
+<h2 id="&#x5C3E;&#x8282;&#x70B9;">&#x5C3E;&#x8282;&#x70B9;</h2>
+<p>&#x5C3E;&#x8282;&#x70B9;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x4E0E;&#x9996;&#x8282;&#x70B9;&#x7684;&#x6DFB;&#x52A0;&#x7C7B;&#x4F3C;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x505A;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addLast</span><span class="hljs-params">(E e)</span> </span>{
+    linkLast(e);
 }
-
-<span class="hljs-comment">// &#x5224;&#x65AD;&#x662F;&#x5426;&#x5B58;&#x5728;&#x95EE;&#x9898;&#xFF0C;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#x4E3A; &#x6570;&#x7EC4;&#x7D22;&#x5F15;&#x8D8A;&#x754C;&#x5F02;&#x5E38;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">checkPositionIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{
-    <span class="hljs-keyword">if</span> (!isPositionIndex(index)) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IndexOutOfBoundsException(outOfBoundsMsg(index));
-}
-
-<span class="hljs-comment">// &#x6DFB;&#x52A0;&#x6307;&#x5B9A;&#x8282;&#x70B9;&#x65F6;&#xFF0C;index &#x5FC5;&#x987B;&#x5927;&#x4E8E;&#x3001;&#x7B49;&#x4E8E; 0&#xFF0C;&#x5C0F;&#x4E8E;&#x5F53;&#x524D;&#x7684;&#x603B;&#x8282;&#x70B9;&#x6570;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isPositionIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{
-    <span class="hljs-comment">// size&#xFF1A;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x7684;&#x8282;&#x70B9;&#x6570;&#xFF0C;LinkedList &#x4E2D;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x7684;&#x603B;&#x6570;</span>
-    <span class="hljs-keyword">return</span> index &gt;= <span class="hljs-number">0</span> &amp;&amp; index &lt;= size;
-}
-
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">linkBefore</span><span class="hljs-params">(E e, Node&lt;E&gt; succ)</span> </span>{
-    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x63D2;&#x5165;&#x8282;&#x70B9;&#x7684;&#x524D;&#x4E00;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
-    <span class="hljs-keyword">final</span> Node&lt;E&gt; pred = succ.prev;
-    <span class="hljs-comment">// &#x5EFA;&#x7ACB;&#x65B0;&#x7684;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
-    <span class="hljs-keyword">final</span> Node&lt;E&gt; newNode = <span class="hljs-keyword">new</span> Node&lt;&gt;(pred, e, succ);
-    succ.prev = newNode;
-    <span class="hljs-comment">// &#x82E5;&#x63D2;&#x5165;&#x7684;&#x8282;&#x70B9;&#x4E0D;&#x5B58;&#x5728;&#x4E0A;&#x4E00;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x8BE5;&#x8282;&#x70B9;&#x4E3A;&#x9996;&#x8282;&#x70B9;</span>
-    <span class="hljs-keyword">if</span> (pred == <span class="hljs-keyword">null</span>)
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">linkLast</span><span class="hljs-params">(E e)</span> </span>{
+    <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8282;&#x70B9;&#x7C7B; l&#xFF0C;&#x63A5;&#x6536;&#x5F53;&#x524D;&#x7684;&#x5C3E;&#x8282;&#x70B9;</span>
+    <span class="hljs-keyword">final</span> Node&lt;E&gt; l = last;
+    <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8282;&#x70B9;&#x7C7B; newNode&#xFF0C;&#x5C06;&#x4E4B;&#x524D;&#x7684;&#x5C3E;&#x8282;&#x70B9;&#x8BBE;&#x7F6E;&#x4E3A;&#x524D;&#x9A71;&#x8282;&#x70B9;&#xFF0C;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x5219;&#x4E3A; null</span>
+    <span class="hljs-keyword">final</span> Node&lt;E&gt; newNode = <span class="hljs-keyword">new</span> Node&lt;&gt;(l, e, <span class="hljs-keyword">null</span>);
+    <span class="hljs-comment">// &#x5C06;&#x5F53;&#x524D;&#x52A0;&#x5165;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x4F5C;&#x4E3A;&#x5C3E;&#x8282;&#x70B9;</span>
+    last = newNode;
+    <span class="hljs-comment">// &#x82E5;&#x5C3E;&#x8282;&#x70B9;&#x4E3A; null&#xFF0C;&#x5373;&#x5F53;&#x524D;&#x52A0;&#x5165;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x4E3A;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</span>
+    <span class="hljs-keyword">if</span> (l == <span class="hljs-keyword">null</span>)
+        <span class="hljs-comment">// &#x5F53;&#x524D;&#x65B0;&#x5EFA;&#x7684;&#x8282;&#x70B9;&#x7C7B; newNode&#xFF0C;&#x4E5F;&#x4F5C;&#x4E3A;&#x9996;&#x8282;&#x70B9;&#x5B58;&#x5728;</span>
         first = newNode;
     <span class="hljs-keyword">else</span>
-        pred.next = newNode;
+        <span class="hljs-comment">// &#x5426;&#x5219;&#xFF0C;&#x5C06;&#x4E4B;&#x524D;&#x5C3E;&#x8282;&#x70B9;&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D;&#x65B0;&#x5EFA;&#x7684;&#x8282;&#x70B9;&#x7C7B; newNode</span>
+        l.next = newNode;
+    <span class="hljs-comment">// &#x8282;&#x70B9;&#x7C7B;&#x52A0; 1</span>
     size++;
+    <span class="hljs-comment">// &#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x6570;&#x52A0; 1</span>
     modCount++;
 }
+</code></pre>
+<p>&#x4E0E;&#x9996;&#x8282;&#x70B9;&#x7684;&#x63D2;&#x5165;&#x903B;&#x8F91;&#x76F8;&#x4F3C;&#xFF0C;&#x5C3E;&#x90E8;&#x5143;&#x7D20;&#x7684;&#x6DFB;&#x52A0;&#x65E0;&#x5DEE;&#x5F02;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x8FD8;&#x662F;&#x6709;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x9700;&#x8981;&#x63D0;&#x4E00;&#x4E0B;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">add</span><span class="hljs-params">(E e)</span> </span>{
+    linkLast(e);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x7684;&#x4EE3;&#x7801;&#x662F; LinkedList &#x6B63;&#x5E38;&#x7684;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x4E2D;&#xFF0C;&#x5B9E;&#x9645;&#x8C03;&#x7528;&#x7684;&#x662F;&#x5C3E;&#x90E8;&#x5143;&#x7D20;&#x6DFB;&#x52A0;</p>
+<h2 id="&#x4E2D;&#x95F4;&#x8282;&#x70B9;">&#x4E2D;&#x95F4;&#x8282;&#x70B9;</h2>
+<p>&#x4E2D;&#x95F4;&#x8282;&#x70B9;&#xFF0C;&#x5176;&#x5B9E;&#x4E0E;&#x9996;&#x3001;&#x5C3E;&#x8282;&#x70B9;&#x7C7B;&#x4F3C;&#xFF0C;&#x5177;&#x4F53;&#x770B;&#x4E0B;&#x8FF0;&#x7684;&#x4EE3;&#x7801;&#x5206;&#x6790;&#x3002;&#x4E25;&#x683C;&#x6765;&#x8BF4;&#xFF0C;&#x4E2D;&#x95F4;&#x8282;&#x70B9;&#x65F6;&#x6839;&#x636E;&#x7D22;&#x5F15;&#x7684;&#x4F4D;&#x7F6E;&#x63D2;&#x5165;&#x8282;&#x70B9;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x63D2;&#x5165;&#x5728;&#x5934;&#x90E8;&#x3001;&#x5C3E;&#x90E8;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, E element)</span> </span>{
+    <span class="hljs-comment">// &#x5224;&#x65AD;&#x6307;&#x5B9A;&#x7684;&#x63D2;&#x5165;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x662F;&#x5426;&#x5B58;&#x5728;&#x7D22;&#x5F15;&#x8D8A;&#x754C;&#x7684;&#x95EE;&#x9898;</span>
+    checkPositionIndex(index);
 
-<span class="hljs-function">Node&lt;E&gt; <span class="hljs-title">node</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{
-    <span class="hljs-comment">// &#x5224;&#x65AD;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x7684;&#x5927;&#x81F4;&#x4F4D;&#x7F6E;</span>
+    <span class="hljs-comment">// &#x82E5;&#x6307;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#x7B49;&#x4E8E;&#x5B9E;&#x9645;&#x8282;&#x70B9;&#x6570;&#xFF0C;&#x5219;&#x4ECE;&#x5C3E;&#x90E8;&#x6DFB;&#x52A0;</span>
+    <span class="hljs-keyword">if</span> (index == size)
+        <span class="hljs-comment">// &#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x81F3;&#x672B;&#x5C3E;</span>
+        linkLast(element);
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-comment">// &#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x81F3;&#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#xFF08;&#x975E;&#x5C3E;&#x90E8;&#xFF09;&#xFF0C;&#x5E76;&#x53D6;&#x51FA;&#x5F53;&#x524D;&#x7D22;&#x5F15;&#x7684;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF08;&#x5DF2;&#x505A;&#x5224;&#x7A7A;&#x5904;&#x7406;&#xFF09;</span>
+        <span class="hljs-comment">// node(index) &#x662F;&#x6839;&#x636E;&#x7D22;&#x5F15;&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x7C7B;&#xFF08;&#x81F3;&#x5173;&#x91CD;&#x8981;&#xFF09;</span>
+        linkBefore(element, node(index));
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-function">Node&lt;E&gt; <span class="hljs-title">node</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{
+    <span class="hljs-comment">// &#x5224;&#x65AD;&#x7D22;&#x5F15;&#x662F;&#x4F4D;&#x4E8E;&#x94FE;&#x8868;&#x7684;&#x4E0A;&#x534A;&#x90E8;&#x5206;&#x3001;&#x4E0B;&#x534A;&#x90E8;&#x5206;&#xFF0C;&#x901A;&#x8FC7;&#x4F4D;&#x8FD0;&#x7B97;</span>
     <span class="hljs-keyword">if</span> (index &lt; (size &gt;&gt; <span class="hljs-number">1</span>)) {
-        <span class="hljs-comment">// &#x5EFA;&#x7ACB;&#x65B0;&#x7684;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x8D4B;&#x503C;&#x4E3A;&#x9996;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
-        <span class="hljs-comment">// &#x9996;&#x8282;&#x70B9;&#x6307;&#x9488;&#x5DF2;&#x7ECF;&#x5728;&#x4E4B;&#x524D;&#xFF0C;&#x53BB;&#x9664;&#x4E86;&#x4E3A; NULL &#x7684;&#x53EF;&#x80FD;</span>
+        <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8282;&#x70B9;&#x7C7B; x&#xFF0C;&#x5E76;&#x9ED8;&#x8BA4;&#x4E3A;&#x9996;&#x8282;&#x70B9;&#xFF0C;&#x56E0;&#x4E3A;&#x9996;&#x8282;&#x70B9;&#x7684;&#x524D;&#x9A71;&#x8282;&#x70B9;&#x4E3A; null</span>
         Node&lt;E&gt; x = first;
+        <span class="hljs-comment">// &#x5F00;&#x59CB;&#x904D;&#x5386;&#x7D22;&#x5F15;&#xFF0C;&#x786E;&#x8BA4;&#x5F53;&#x524D;&#x7D22;&#x5F15;&#x4EE3;&#x8868;&#x7684;&#x8282;&#x70B9;&#x7C7B;</span>
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; index; i++)
-            <span class="hljs-comment">// &#x6839;&#x636E;&#x63D2;&#x5165;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x83B7;&#x53D6;&#x4E0B;&#x4E00;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x81EA;&#x524D;&#x5411;&#x540E;</span>
+            <span class="hljs-comment">// &#x8BF7;&#x6CE8;&#x610F;&#xFF1A;next &#x540E;&#x7EE7;&#x672C;&#x8EAB;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7C7B;&#xFF0C;&#x4E5F;&#x5B58;&#x5728;&#x5BF9;&#x5E94;&#x7684; next</span>
+            <span class="hljs-comment">// &#x4E0D;&#x65AD;&#x7684;&#x7D22;&#x5F15;&#x904D;&#x5386;&#xFF0C;&#x83B7;&#x5F97;&#x6307;&#x5B9A;&#x7D22;&#x5F15;&#x5904;&#x7684;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
             x = x.next;
+        <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x65B0;&#x5EFA;&#x7684;&#x8282;&#x70B9;</span>
         <span class="hljs-keyword">return</span> x;
     } <span class="hljs-keyword">else</span> {
         Node&lt;E&gt; x = last;
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size - <span class="hljs-number">1</span>; i &gt; index; i--)
-            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x63D2;&#x5165;&#x8282;&#x70B9;&#x7684;&#x4E0A;&#x4E00;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</span>
             x = x.prev;
         <span class="hljs-keyword">return</span> x;
     }
 }
 </code></pre>
-<p>&#x5BF9;&#x4E8E;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x7684;&#x6307;&#x5B9A;&#x63D2;&#x5165;&#xFF0C;&#x5728;&#x5B9E;&#x73B0;&#x4E0A;&#x662F;&#x8F83;&#x4E3A;&#x590D;&#x6742;&#x7684;&#xFF0C;&#x4F46;&#x539F;&#x7406;&#x662F;&#x76F8;&#x4F3C;&#x7684;</p>
-<p>&#x4EE5;&#x4E0A;&#xFF0C;&#x662F;&#x5BF9;&#x4E8E; <code>LinkedList</code> &#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF0C;&#x5927;&#x81F4;&#x662F;&#x5BF9;&#x4E8E;&#x5176;&#x4E2D;&#x8282;&#x70B9;&#x7684;&#x4F5C;&#x7528;&#x7684;&#x8BF4;&#x660E;</p>
-<p>&#x6B63;&#x5E38;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x3001;&#x5934;&#x90E8;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x3001;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5143;&#x7D20;&#x6DFB;&#x52A0;]</p>
-<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;<code>LinkedList</code> &#x4E0D;&#x5B58;&#x5728;&#x521D;&#x59CB;&#x5927;&#x5C0F;&#xFF0C;<strong>&#x6309;&#x9700;&#x5206;&#x914D;&#x7A7A;&#x95F4;&#xFF0C;&#x4E0D;&#x4F5C;&#x9884;&#x5148;&#x5904;&#x7406;</strong></p>
-<p>&#x7B80;&#x5355;&#x7684;&#x7406;&#x89E3;&#xFF0C;LinkedList &#x7406;&#x8BBA;&#x4E0A;&#x4E0D;&#x5B58;&#x5728;&#x5BB9;&#x91CF;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x7684;&#x6548;&#x7387;&#x8F83;&#x9AD8;</p>
-<p>&#x5F53;&#x7136;&#xFF0C;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x7531;&#x865A;&#x62DF;&#x673A;&#x5206;&#x914D;&#x7684;&#x5806;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x662F;&#x6709;&#x9650;&#x7684;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x65E0;&#x9650;&#x5236;&#x7684;&#x5BB9;&#x91CF;</p>
-<p>&#x5B83;&#x662F;&#x57FA;&#x4E8E;&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x7269;&#x7406;&#x4E0A;&#x5B58;&#x50A8;&#x662F;&#x4E0D;&#x8FDE;&#x7EED;&#x7684;&#xFF0C;&#x901A;&#x8FC7;&#x8282;&#x70B9;&#xFF0C;&#x5B9E;&#x73B0;&#x903B;&#x8F91;&#x4E0A;&#x7684;&#x8FDE;&#x7EED;</p>
-<p><strong>&#x76EE;&#x524D;&#xFF0C;LinkedList &#x57FA;&#x4E8E;&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;&#x800C;&#x975E;&#x53CC;&#x5411;&#x5FAA;&#x73AF;&#x94FE;&#x8868;</strong></p>
-<p>&#x540C;&#x65F6;&#xFF0C;LinkedList &#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x6808;&#x3001;&#x961F;&#x5217;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x5C40;&#x9650;&#x4E8E;&#x53CC;&#x5411;&#x94FE;&#x8868;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">linkBefore</span><span class="hljs-params">(E e, Node&lt;E&gt; succ)</span> </span>{
+    <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8282;&#x70B9;&#x7C7B; pred&#xFF0C;&#x63A5;&#x6536; succ &#x7684;&#x524D;&#x9A71;&#x8282;&#x70B9;</span>
+    <span class="hljs-keyword">final</span> Node&lt;E&gt; pred = succ.prev;
+    <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8282;&#x70B9;&#x7C7B; newNode</span>
+    <span class="hljs-keyword">final</span> Node&lt;E&gt; newNode = <span class="hljs-keyword">new</span> Node&lt;&gt;(pred, e, succ);
+    <span class="hljs-comment">// succ &#x7684;&#x524D;&#x9A71;&#x8282;&#x70B9;&#x8BBE;&#x7F6E;&#x4E3A;&#x65B0;&#x5EFA;&#x8282;&#x70B9; newNode</span>
+    succ.prev = newNode;
+    <span class="hljs-comment">// pred &#x63A5;&#x6536;&#x4E86; succ &#x7684;&#x524D;&#x9A71;&#x8282;&#x70B9;&#xFF0C;&#x53EA;&#x6709;&#x9996;&#x8282;&#x70B9;&#x4E0D;&#x5B58;&#x5728;&#x524D;&#x9A71;&#x8282;&#x70B9;</span>
+    <span class="hljs-keyword">if</span> (pred == <span class="hljs-keyword">null</span>)
+        <span class="hljs-comment">// &#x63D2;&#x5165;&#x7684;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;&#x4E3A; 0&#xFF0C;&#x5C06;&#x65B0;&#x5EFA;&#x8282;&#x70B9; newNode &#x8BBE;&#x7F6E;&#x4E3A;&#x9996;&#x8282;&#x70B9;</span>
+        first = newNode;
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-comment">// &#x63D2;&#x5165;&#x7684;&#x7D22;&#x5F15;&#x4E0D;&#x662F; 0 &#x548C;&#x5C3E;&#x90E8;&#xFF0C;&#x800C;&#x662F;&#x4E2D;&#x95F4;&#xFF0C;&#x5C06;&#x65B0;&#x5EFA;&#x8282;&#x70B9; newNode &#x8BBE;&#x4E3A; &#x65B0;&#x5EFA;&#x8282;&#x70B9; pred &#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;</span>
+        pred.next = newNode;
+    size++;
+    modCount++;
+}
+</code></pre>
+<p>&#x4E2D;&#x95F4;&#x8282;&#x70B9;&#x7684;&#x6DFB;&#x52A0;&#xFF0C;&#x786E;&#x5B9E;&#x662F;&#x6709;&#x4E9B;&#x7ED5;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x4E4B;&#x524D;&#x7684;&#x9996;&#x3001;&#x5C3E;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x7B80;&#x8981;&#x7684;&#x6982;&#x62EC;</p>
+<ol>
+<li>&#x5224;&#x65AD;&#x5F53;&#x524D;&#x7684;&#x7D22;&#x5F15;&#x662F;&#x5426;&#x8D8A;&#x754C;</li>
+<li>&#x5224;&#x65AD;&#x5F53;&#x524D;&#x7684;&#x7D22;&#x5F15;&#x662F;&#x5426;&#x662F;&#x5C3E;&#x90E8;&#x7D22;&#x5F15;&#xFF0C;&#x6DFB;&#x52A0;&#x4E3A;&#x5C3E;&#x90E8;&#x8282;&#x70B9;</li>
+<li>&#x83B7;&#x53D6;&#x8BE5;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;&#x7684;&#x539F;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x7D22;&#x5F15;&#x7684;&#x662F;&#x5426;&#x4E3A;&#x524D;&#x7F6E;&#x8282;&#x70B9;</li>
+<li>&#x82E5;&#x4E0D;&#x662F;&#x524D;&#x7F6E;&#x8282;&#x70B9;&#xFF0C;&#x5219;&#x5C06;&#x6570;&#x636E;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5230;&#x4E2D;&#x95F4;&#x4F4D;&#x7F6E;&#xFF0C;&#x539F;&#x8282;&#x70B9;&#x540E;&#x79FB;&#x4E00;&#x4F4D;</li>
+</ol>
+<p>&#x5F88;&#x5999;&#xFF0C;&#x8BBE;&#x8BA1;&#x7684;&#x5F88;&#x5999;&#xFF01;&#x6BD4;&#x5982;&#x6839;&#x636E;&#x7D22;&#x5F15;&#x83B7;&#x5F97;&#x8282;&#x70B9;&#x7C7B;&#x65F6;&#xFF0C;&#x6240;&#x91C7;&#x7528;&#x7684;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x3002;&#x5E76;&#x4E14;&#xFF0C;&#x5728;&#x540E;&#x534A;&#x90E8;&#x5206;&#x4E2D;&#xFF0C;&#x82E5;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;&#x4E3A;&#x5012;&#x6570;&#x7B2C;&#x4E8C;&#x4E2A;&#xFF0C;&#x5219;&#x65E0;&#x987B;&#x904D;&#x5386;&#x3002;&#x4E0A;&#x534A;&#x90E8;&#x5206;&#x81EA;&#x524D;&#x5411;&#x540E;&#xFF1B;&#x4E0B;&#x534A;&#x90E8;&#x5206;&#x81EA;&#x540E;&#x5411;&#x524D;</p>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x5173;&#x4E8E; LinkedList &#x7684;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#xFF0C;&#x544A;&#x4E00;&#x6BB5;&#x843D;&#xFF0C;&#x7B97;&#x662F;&#x5C0F;&#x6709;&#x6240;&#x83B7;</p>
+<h1 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h1>
+<p>LinkedList &#x4E2D;&#xFF0C;&#x6700;&#x91CD;&#x8981;&#x7684;&#x5C31;&#x662F;&#x8282;&#x70B9;&#x7C7B;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5176;&#x4F59;&#x7684;&#x65B9;&#x6CD5;&#x6682;&#x4E0D;&#x505A;&#x4ECB;&#x7ECD;&#xFF0C;&#x7A7A;&#x4F59;&#x65F6;&#x95F4;&#x518D;&#x586B;&#x8865;</p>
 <footer class="page-footer"><span class="copyright">Mr.Zhou Blog - GitHub Pages</span><span class="footer-modification">Last updated at&#xFF1A;
-2021-06-06 10:13:24
+2021-06-10 17:46:46
 </span></footer>
                                 
                                 </section>
@@ -1739,7 +1652,7 @@ System.out.println(integers.size());
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LinkedList 剖析","level":"4.1.6","depth":2,"next":{"title":"ArrayDeque 剖析","level":"4.1.7","depth":2,"path":"存储数据的容器/ArrayDeque类.md","ref":"./存储数据的容器/ArrayDeque类.md","articles":[]},"previous":{"title":"Vector 剖析","level":"4.1.5","depth":2,"path":"存储数据的容器/Vector类.md","ref":"./存储数据的容器/Vector类.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","search-pro","expandable-chapters","chapter-fold","back-to-top-button","hide-element","tbfed-pagefooter","favicon","insert-logo","todos","intopic-toc","nvigation","recently-updated","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Mr.Zhou Blog - GitHub Pages","modify_label":"Last updated at：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"章节目录","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"search-pro":{},"search":{},"todos":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"nvigation":{"navigatorList":[{"name":"Google 搜索","url":"https://www.google.com/"},{"name":"GitHub","url":"https://github.com/"},{"name":"GitHub 镜像","url":"https://hub.fastgit.org/"},{"name":"老马说编程","url":"https://www.cnblogs.com/swiftma/p/5631311.html"},{"name":"Rust 中文","url":"https://kaisery.github.io/trpl-zh-cn/"},{"name":"语言规范","url":"https://docs.oracle.com/javase/specs/jls/se11/html/index.html"},{"name":"虚拟机规范","url":"https://docs.oracle.com/javase/specs/jvms/se11/html/index.html"},{"name":"Spring 生态","url":"https://spring.io/projects"},{"name":"Stack Overflow","url":"https://stackoverflow.com/"},{"name":"维基百科","url":"https://www.wikipedia.org/"},{"name":"哔哩哔哩","url":"https://www.bilibili.com/"}]},"hide-element":{"elements":[".gitbook-link",".navigation",".navigation-prev",".book-header",".divider"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./styles/GitHub.png","bookmark":"./styles/GitHub.png","appleTouch":"./styles/GitHub.png","appleTouchMore":{"120x120":"./styles/GitHub.png","180x180":"./styles/GitHub.png"}},"recently-updated":{},"back-to-top-button":{},"links":{"sidebar":{"Home":"https://wyfyjc.com"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"width: 90%;height: 90px;","url":"/styles/雪湖.jpg"},"expandable-chapters":{}},"theme":"default","author":"周默","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Mr.Zhou","language":"zh-hans","gitbook":"*","description":"惟愿风雨兼程，路尽仍显峥嵘！"},"file":{"path":"存储数据的容器/LinkedList类.md","mtime":"2021-06-06T02:13:24.401Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-10T04:38:08.914Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LinkedList 剖析","level":"4.1.6","depth":2,"next":{"title":"ArrayDeque 剖析","level":"4.1.7","depth":2,"path":"存储数据的容器/ArrayDeque类.md","ref":"./存储数据的容器/ArrayDeque类.md","articles":[]},"previous":{"title":"Vector 剖析","level":"4.1.5","depth":2,"path":"存储数据的容器/Vector类.md","ref":"./存储数据的容器/Vector类.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","search-pro","expandable-chapters","chapter-fold","back-to-top-button","hide-element","tbfed-pagefooter","favicon","insert-logo","todos","intopic-toc","nvigation","recently-updated","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Mr.Zhou Blog - GitHub Pages","modify_label":"Last updated at：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"章节目录","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"search-pro":{},"search":{},"todos":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"nvigation":{"navigatorList":[{"name":"Google 搜索","url":"https://www.google.com/"},{"name":"GitHub","url":"https://github.com/"},{"name":"GitHub 镜像","url":"https://hub.fastgit.org/"},{"name":"老马说编程","url":"https://www.cnblogs.com/swiftma/p/5631311.html"},{"name":"Rust 中文","url":"https://kaisery.github.io/trpl-zh-cn/"},{"name":"语言规范","url":"https://docs.oracle.com/javase/specs/jls/se11/html/index.html"},{"name":"虚拟机规范","url":"https://docs.oracle.com/javase/specs/jvms/se11/html/index.html"},{"name":"Spring 生态","url":"https://spring.io/projects"},{"name":"Stack Overflow","url":"https://stackoverflow.com/"},{"name":"维基百科","url":"https://www.wikipedia.org/"},{"name":"哔哩哔哩","url":"https://www.bilibili.com/"}]},"hide-element":{"elements":[".gitbook-link",".navigation",".navigation-prev",".book-header",".divider"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./styles/GitHub.png","bookmark":"./styles/GitHub.png","appleTouch":"./styles/GitHub.png","appleTouchMore":{"120x120":"./styles/GitHub.png","180x180":"./styles/GitHub.png"}},"recently-updated":{},"back-to-top-button":{},"links":{"sidebar":{"Home":"https://wyfyjc.com"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"width: 90%;height: 90px;","url":"/styles/雪湖.jpg"},"expandable-chapters":{}},"theme":"default","author":"周默","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Mr.Zhou","language":"zh-hans","gitbook":"*","description":"惟愿风雨兼程，路尽仍显峥嵘！"},"file":{"path":"存储数据的容器/LinkedList类.md","mtime":"2021-06-10T09:46:46.297Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-10T09:56:52.902Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

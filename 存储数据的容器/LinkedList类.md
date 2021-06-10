@@ -1,40 +1,33 @@
-### 基本使用
+# 概述
 
-`LinkedList` 的底层基于 ` 双向链表 ` 实现，这与 `Arraylist`、`Vector` 的 ` 数组 ` 实现是不同的
+LinkedList，它的底层基于双向链表实现，在内存中的存储不连续，增、删数据元素时效率极高
 
-基于 ` 双向链表 ` 实现的 `LinkedList` 具有如下的特点
-
-- 数据元素的增加、删除操作较快，它的 **修改、删除效率高**
-- 相对于数组实现的 `ArrayList` ，它的 **查询、添加效率低**
-- 相对于线程安全的 `Vector` ，它的 **线程不安全**
+这与 ArrayList 本质上不同，对于具体的效率差异，可以运行下述的代码，测试二者在添加数据时的耗费时间
 
 ```java
-ArrayList<Integer> arrayList = new ArrayList<>();
+ArrayList<Integer> ArrayList = new ArrayList<>();
 long startTime1 = System.currentTimeMillis();
 for (int i = 0; i < 100 * 100 * 100; i++) {
-	arrayList.add(i);
+	ArrayList.add(i);
 }
 long endTime1 = System.currentTimeMillis();
 System.out.println("ArrayList 用时：" + (endTime1 - startTime1) + " 毫秒");
-```
-
-```java
-LinkedList<Integer> linkedList = new LinkedList<>();
+LinkedList<Integer> LinkedList = new LinkedList<>();
 long startTime2 = System.currentTimeMillis();
 for (int i = 0; i < 100 * 100 * 100; i++) {
-	linkedList.add(i);
+	LinkedList.add(i);
 }
 long endTime2 = System.currentTimeMillis();
 System.out.println("LinkedList 用时：" + (endTime2 - startTime2) + " 毫秒");
 ```
 
-上述的代码，是测试 ArrayList、LinkedList 在插入元素时的时间消耗
+这正是数据结构的魅力。当然，如果可以了解操作系统中，关于内存存储的细节，那就再好不过了。简单的说，操作系统对于连续、不连续数据的处理问题，只看数据结构，还是会存在些许的疑惑
 
-同样的，也可以用于测试修改元素的时间消耗
+# 基本使用
 
-这可以很明确的认识到：数组、链表这两个数据结构的差异
+底层实现的不同，也使得 LinkedList、ArrayList 中定义的方法爷存在较大的差异
 
-同样继承自 `List` 接口的 `LinkedList` 容器，**扩展方法** 如下
+对于 LinkedList，它扩展了如下的方法
 
 - `void addFirst(E e)` ：将指定元素插入到开头位置
 - `void addLast(E e)` ：将指定元素插入到结尾位置
@@ -46,328 +39,236 @@ System.out.println("LinkedList 用时：" + (endTime2 - startTime2) + " 毫秒")
 - `void push(E e)` ：添加元素至列表的开头位置
 - `boolean isEmpty()` ：判断列表是否为空
 
-可以看出，链表实现的 `LinkedList`，在继承 `List` 接口的同时，拓展了独有方法
-
-`LinkedList` 的使用案例
-
 ```java
-LinkedList<String> linkedList = new LinkedList<>();
+LinkedList<String> LinkedList = new LinkedList<>();
 
 // 添加元素至列表的开头、结尾
-linkedList.addFirst("A");
-linkedList.addFirst("B");
-linkedList.addFirst("C");
-linkedList.addLast("D");
+LinkedList.addFirst("A");
+LinkedList.addFirst("B");
+LinkedList.addFirst("C");
+LinkedList.addLast("D");
 
 // 获取此列表的第一个元素、最后一个元素
-System.out.println(linkedList.getFirst());
-System.out.println(linkedList.getLast());
+System.out.println(LinkedList.getFirst());
+System.out.println(LinkedList.getLast());
 
 // 移除该列表的第一个元素、最后一个元素，并返回
-System.out.println(linkedList.removeFirst());
-System.out.println(linkedList.removeLast());
-for (String s : linkedList) {
+System.out.println(LinkedList.removeFirst());
+System.out.println(LinkedList.removeLast());
+for (String s : LinkedList) {
 	System.out.println(s);
 }
 
 // 弹出该列表的第一个元素 removeFirst()
-System.out.println(linkedList.pop());
+System.out.println(LinkedList.pop());
 
 // 添加元素至列表的开头位置 addFirst()
-linkedList.push("E");
+LinkedList.push("E");
 
 // 判断列表是否为空
-System.out.println(linkedList.isEmpty());
+System.out.println(LinkedList.isEmpty());
 ```
 
-值得注意的是，inkedList 除了实现 List 接口，还实现了 Deque 接口
-
-而其中的 Deque 接口，则实现了 Queue 接口
-
-### 实现 Deque
-
-LinkedList直接实现了Deque接口，这是一个双端队列
-
-对于双端队列，它同时具有栈、队列的特征，需要区分开
-
-双端队列，可以在头部、尾部操作数据元素
-
-Deque扩展了如下的方法
-
-- `void push()`：头部添加元素，栈溢出则抛出异常
-- `E push(E e)`：查询头部元素，栈为空则返回NULL
-- `E pop()`：查看并删除头部元素，栈为空则抛出异常
+# 初始化
 
 ```java
-Deque<Integer> deque = new LinkedList<>();
-deque.push(1);
-deque.push(2);
-System.out.println(deque.size());
+public LinkedList() {
+}
 ```
 
-### 实现 Queue
+这是 LinkedList 的为空扩容，很惊讶。这仅是一个普通的无参构造函数，并不存在其它的操作。也就是说，**LinkedList 不存在初始容量**
 
-LinkedList 间接实现了 Queue 接口，这是一个队列
+底层基于链表实现，数据元素的添加操作，不再像 ArrayList 一样。LinkedList 中，一个元素的添加，仅涉及到至多两个元素的变化，即添加元素的前驱元素、后继元素
 
-值得注意的是，Queue 接口也继承了 Collection 类，并扩展了一些方法
+![双向链表LinkedList.jpg](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/47ddddbc21cb4b5a8c30fab74eb22b0a~tplv-k3u1fbpfcp-watermark.image)
 
-Queue接口扩展的方法
+上述图片，是 LinkedList 添加元素时的示意图。可以看出，不需要后面元素的整体后移，仅是修改指针。接下来，关于节点类的讨论，也可以加深理解
 
-- `boolean add(E e)`：尾部添加元素
-- `boolean offer(E e)`：尾部添加元素
-- `E element()`：查询头部元素，但不删除
-- `E peek()`：查询头部元素，但不删除
-- `E pull()`：查询头部元素，并删除
-- `E remove()`：查询头部元素，并删除
+# 扩容
+
+扩容这一部分，重点是讨论 LinkedList 对于元素的添加操作，其中的指针是如何变化的
+
+需要先认识几个概念，关于首、尾指针与节点类
+
+- **Node<E> first**：首节点，双向链表的第一个节点
+- **Node<E> last**：尾节点，双向链表的最后一个节点
+
+再认识一下节点类 Node，它很重要
 
 ```java
-Queue<Integer> integers = new LinkedList<>();
-integers.add(1);
-integers.add(2);
-System.out.println(integers.size());
-```
-
-### 节点对象
-
-对于 `LinkedList` 源码的分析，是与 `ArrayList`、`Vector` 存在较大差异的
-
-`LinkedList` 基于双向链表实现，而每个存储单元，都存在两个首、尾节点
-
-`LinkedList`的节点类：私有、静态、内部类
-
-```Java
 private static class Node<E> {
-	// item：数据元素
-	E item;
-	// next：下一个节点、尾节点
-	Node<E> next;
-	// prev：上一个节点、首节点
-	Node<E> prev;
+    // 当前元素
+    E item;
+    // 当前节点的下一节点，即后一个元素
+    Node<E> next;
+    // 当前元素的上一节点，即前一个元素
+    Node<E> prev;
 
-	// 建立一个链表存储单元，存在数据元素、两个指向节点
-	Node(Node<E> prev, E element, Node<E> next) {
-		this.item = element;
-		this.next = next;
-		this.prev = prev;
-	}
+    // 有参构造，生成一个节点类，中间为一个数据元素，两侧为后继、前驱节点（元素）
+    Node(Node<E> prev, E element, Node<E> next) {
+        this.item = element;
+        this.next = next;
+        this.prev = prev;
+    }
 }
 ```
 
-### 节点添加
+简单理解为，一个数据元素的添加，可以封装为一个节点类。同时，为它指定上一个、下一个数据元素，以节点类的形式
 
-`LinkedList` 的元素添加：正常添加，了解节点类的使用
+值得一提的是，首元素只存在后继节点；尾元素只存在前驱节点
 
-```java
-// 添加元素，在尾部插入节点
-public boolean add(E e) {
-	linkLast(e);
-	return true;
-}
+理解了这些，接下来就是详细介绍节点类的运用，明白节点类设计的必要性
 
-// 插入尾节点
-void linkLast(E e) {
-	// last：指向后一个节点的指针，开始默认为NULL
-	final Node<E> l = last;
-	// 新建节点对象，填入数据元素
-	final Node<E> newNode = new Node<>(l, e, null);
-	// 将新建的节点对象，赋值给last指针
-	last = newNode;
-	// 判断是否存在下一个节点
-	if (l == null)
-		// 若不存在下一节点，将当前节点设为尾节点
-		first = newNode;
-	else
-		// 若存在下一节点，将当前节点设为上一节点
-		l.next = newNode;
-	// size：记录双向链表的节点个数，等同于记录数据元素的个数
-	size++;
-	modCount++;
-}
-```
-
-双向链表的节点，理解确实是有些麻烦
-
-![双向链表LinkedList](../styles/IMAGES/双向链表LinkedList.jpg)
-
-现在，向 `LinkedList` 中插入三个数据元素，成员 A、B、C
-
-添加元素（成员 A）：首、尾节点为 NULL
-
-```java
-void linkLast(E e) {
-	// last：记录最后一个节点对象，此时为 NULL
-	final Node<E> l = last;
-	// 新建节点对象，首、尾节点为 NULL
-	final Node<E> newNode = new Node<>(l, e, null);
-	// 当前节点对象，赋值给 last 指针
-	last = newNode;
-	if (l == null)
-		// first：记录了第一个节点对象
-		// 此时，将成员 A 记录为了第一个节点对象
-		first = newNode;
-	else
-		l.next = newNode;
-	size++;
-	modCount++;
-}
-```
-
-添加元素（成员 B）：存在上一节点，成员 A
-
-```java
-void linkLast(E e) {
-	// last 指针记录了上一节点对象，成员 A
-	final Node<E> l = last;
-	// 新建节点对象，存在上一节点，下一节点为 NULL
-	final Node<E> newNode = new Node<>(l, e, null);
-	// 当前节点对象为成员 B，赋值给 last 指针
-	last = newNode;
-	if (l == null)
-		first = newNode;
-	else
-		// 将上一节点对象的尾节点设置为当前节点对象
-		// 成员 A 的下一节点由 NULL 更改为成员 B
-		l.next = newNode;
-	size++;
-	modCount++;
-}
-```
-
-添加元素（成员 C）：存在上一节点，成员 B
-
-```java
-void linkLast(E e) {
-	// last 指针记录了上一节点对象，成员 B
-	final Node<E> l = last;
-	// 新建节点对象，存在上一节点，下一节点为 NULL
-	final Node<E> newNode = new Node<>(l, e, null);
-	// 当前节点对象为成员 C，赋值给 last 指针
-	last = newNode;
-	if (l == null)
-		first = newNode;
-	else
-		// 将上一节点对象的尾节点设置为当前节点对象
-		// 成员 B 的下一节点由 NULL 更改为成员 C
-		l.next = newNode;
-	size++;
-	modCount++;
-}
-```
-
-上述是对于 `LinkedList` 元素添加的源码分析，核心在于节点对象的首尾、前后节点指针
-
----
-
-`LinkedList` **添加头部节点**：void addFirst(E e);
+## 首节点
 
 ```java
 public void addFirst(E e) {
-	linkFirst(e);
-}
-
-private void linkFirst(E e) {
-	// first：记录了第一个节点对象
-	// 注意，任意方式添加的第一个节点对象，同时赋值给 last、first
-	final Node<E> f = first;
-	// 建立节点对象，前后节点为 NULL，存储数据元素
-	final Node<E> newNode = new Node<>(null, e, f);
-	// 当前节点对象，赋值给first，作为第一个节点对象
-	first = newNode;
-	if (f == null)
-		// 若LinkedList只存在当前一个节点对象，则作为首、尾节点对象存在
-		last = newNode;
-	else
-		// 若存在其它的节点对象，则作为当前对象的下一节点对象
-		f.prev = newNode;
-	size++;
-	modCount++;
+    linkFirst(e);
 }
 ```
 
-从 `LinkedList` 添加头部节点，可以很清晰的认识到
+```java
+private void linkFirst(E e) {
+    // 新建节点类 f，接收当前的首节点
+    final Node<E> f = first;
+    // 新建节点类，默认将首节点设置为后继节点，原首节点位置设置为 null，即不存在首节点
+    final Node<E> newNode = new Node<>(null, e, f);
+    // 将新建的节点类 newNode 赋值给全局首节点
+    first = newNode;
+    // 若不存在首节点
+    if (f == null)
+        // 则新建的节点类 newNode，既作为首节点，也作为尾节点
+        last = newNode;
+    else
+        // 否则，将原先的首节点，其前驱节点设置为当前新建的节点 newNode
+        f.prev = newNode;
+    // 记录容器内的节点数
+    size++;
+    // 记录修改操作的次数
+    modCount++;
+}
+```
 
-- 任何方式添加的第一个节点对象，会同时作为首尾节点存在，并赋值给 `first`、`last`
-- `first` 指针，指向第一个节点对象，首节点的前驱元素为 NULL
-- `last` 指针，指向最后一个节点对象，尾节点的后继元素为 NULL
-- 除首、尾节点对象外，其余皆存在前、后节点对象
+看！多么的精妙！
 
----
+若容器内不存在数据元素，则添加的第一个节点类，同时作为前驱、后继节点；若容器内已存在数据元素（大于 0），即有首节点、尾节点，则将加入的节点类作为首节点，原首节点将前驱设置为当前加入的节点类
 
-`LinkedList` **添加指定节点**：void add(int index, E element) {};
+## 尾节点
+
+尾节点的概念，与首节点的添加类似，这里也做简单介绍
+
+```java
+public void addLast(E e) {
+    linkLast(e);
+}
+```
+
+```java
+void linkLast(E e) {
+    // 新建节点类 l，接收当前的尾节点
+    final Node<E> l = last;
+    // 新建节点类 newNode，将之前的尾节点设置为前驱节点，后继节点则为 null
+    final Node<E> newNode = new Node<>(l, e, null);
+    // 将当前加入的节点，作为尾节点
+    last = newNode;
+    // 若尾节点为 null，即当前加入的元素，为容器中的第一个元素
+    if (l == null)
+        // 当前新建的节点类 newNode，也作为首节点存在
+        first = newNode;
+    else
+        // 否则，将之前尾节点的后继节点设置为当前新建的节点类 newNode
+        l.next = newNode;
+    // 节点类加 1
+    size++;
+    // 修改操作数加 1
+    modCount++;
+}
+```
+
+与首节点的插入逻辑相似，尾部元素的添加无差异。当然，还是有一个地方需要提一下
+
+```java
+public boolean add(E e) {
+    linkLast(e);
+    return true;
+}
+```
+
+上述的代码是 LinkedList 正常的元素添加方法，其中，实际调用的是尾部元素添加
+
+## 中间节点
+
+中间节点，其实与首、尾节点类似，具体看下述的代码分析。严格来说，中间节点时根据索引的位置插入节点，也可以被插入在头部、尾部
 
 ```java
 public void add(int index, E element) {
-	// 判断输入的位置，是否存在问题
-	checkPositionIndex(index);
-	// 若 index==size，则是作为最后一个节点存在，正常调用 linkLast()
-	// 考虑到了，插入的节点是第一个节点的可能，nice！！
-	if (index == size)
-		linkLast(element);
-	else
-		// 否则调用 linkBefore(element, node(index))
-		linkBefore(element, node(index));
-}
+    // 判断指定的插入的位置，是否存在索引越界的问题
+    checkPositionIndex(index);
 
-// 判断是否存在问题，抛出的异常为 数组索引越界异常
-private void checkPositionIndex(int index) {
-	if (!isPositionIndex(index)) throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
-}
-
-// 添加指定节点时，index 必须大于、等于 0，小于当前的总节点数
-private boolean isPositionIndex(int index) {
-	// size：记录当前的节点数，LinkedList 中已存在的节点对象的总数
-	return index >= 0 && index <= size;
-}
-
-void linkBefore(E e, Node<E> succ) {
-	// 获取插入节点的前一节点对象
-	final Node<E> pred = succ.prev;
-	// 建立新的节点对象
-	final Node<E> newNode = new Node<>(pred, e, succ);
-	succ.prev = newNode;
-	// 若插入的节点不存在上一节点对象，即该节点为首节点
-	if (pred == null)
-		first = newNode;
-	else
-		pred.next = newNode;
-	size++;
-	modCount++;
-}
-
-Node<E> node(int index) {
-	// 判断节点插入的大致位置
-	if (index < (size >> 1)) {
-		// 建立新的节点对象，并赋值为首节点的节点对象
-		// 首节点指针已经在之前，去除了为 NULL 的可能
-		Node<E> x = first;
-		for (int i = 0; i < index; i++)
-			// 根据插入节点的位置，获取下一节点对象，自前向后
-			x = x.next;
-		return x;
-	} else {
-		Node<E> x = last;
-		for (int i = size - 1; i > index; i--)
-			// 获取插入节点的上一节点对象
-			x = x.prev;
-		return x;
-	}
+    // 若指定的位置等于实际节点数，则从尾部添加
+    if (index == size)
+        // 元素添加至末尾
+        linkLast(element);
+    else
+        // 元素添加至任意位置（非尾部），并取出当前索引的元素节点（已做判空处理）
+        // node(index) 是根据索引获取节点类（至关重要）
+        linkBefore(element, node(index));
 }
 ```
 
-对于节点对象的指定插入，在实现上是较为复杂的，但原理是相似的
+```java
+Node<E> node(int index) {
+    // 判断索引是位于链表的上半部分、下半部分，通过位运算
+    if (index < (size >> 1)) {
+        // 新建节点类 x，并默认为首节点，因为首节点的前驱节点为 null
+        Node<E> x = first;
+        // 开始遍历索引，确认当前索引代表的节点类
+        for (int i = 0; i < index; i++)
+            // 请注意：next 后继本身也是一个节点类，也存在对应的 next
+            // 不断的索引遍历，获得指定索引处的节点对象
+            x = x.next;
+        // 返回新建的节点
+        return x;
+    } else {
+        Node<E> x = last;
+        for (int i = size - 1; i > index; i--)
+            x = x.prev;
+        return x;
+    }
+}
+```
 
-以上，是对于 `LinkedList` 的源码分析，大致是对于其中节点的作用的说明
+```java
+void linkBefore(E e, Node<E> succ) {
+    // 新建节点类 pred，接收 succ 的前驱节点
+    final Node<E> pred = succ.prev;
+    // 新建节点类 newNode
+    final Node<E> newNode = new Node<>(pred, e, succ);
+    // succ 的前驱节点设置为新建节点 newNode
+    succ.prev = newNode;
+    // pred 接收了 succ 的前驱节点，只有首节点不存在前驱节点
+    if (pred == null)
+        // 插入的索引位置为 0，将新建节点 newNode 设置为首节点
+        first = newNode;
+    else
+        // 插入的索引不是 0 和尾部，而是中间，将新建节点 newNode 设为 新建节点 pred 的后继节点
+        pred.next = newNode;
+    size++;
+    modCount++;
+}
+```
 
-正常元素添加、头部元素添加、指定位置元素添加]
+中间节点的添加，确实是有些绕，相对于之前的首、尾节点添加。在这里，简要的概括
 
-值得注意的是，`LinkedList` 不存在初始大小，**按需分配空间，不作预先处理**
+1. 判断当前的索引是否越界
+2. 判断当前的索引是否是尾部索引，添加为尾部节点
+3. 获取该索引位置的原节点，并判断当前索引的是否为前置节点
+4. 若不是前置节点，则将数据元素插入到中间位置，原节点后移一位
 
-简单的理解，LinkedList 理论上不存在容量的限制，元素添加的效率较高
+很妙，设计的很妙！比如根据索引获得节点类时，所采用的二分查找。并且，在后半部分中，若索引位置为倒数第二个，则无须遍历。上半部分自前向后；下半部分自后向前
 
-当然，每个对象由虚拟机分配的堆内存空间是有限的，不存在无限制的容量
+至此，关于 LinkedList 的节点添加，告一段落，算是小有所获
 
-它是基于链表实现的，在内存中，物理上存储是不连续的，通过节点，实现逻辑上的连续
+# 小结
 
-**目前，LinkedList 基于双向链表，而非双向循环链表**
-
-同时，LinkedList 也可以作为栈、队列使用，不局限于双向链表
+LinkedList 中，最重要的就是节点类的概念，其余的方法暂不做介绍，空余时间再填补
